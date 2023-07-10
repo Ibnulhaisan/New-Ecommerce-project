@@ -20,7 +20,7 @@
             <li class="nav-item {{ Request::is('categories') ? 'active' : '' }}">
                 <a class="nav-link text-white {{ Request::is('categories') ? 'bg-gradient-primary' : '' }}" href="{{ url('categories') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">person</i>
+                        <i class="material-icons">shopping_basket</i>
                     </div>
                     <span class="nav-link-text ms-1">Categories</span>
                 </a>
@@ -36,7 +36,7 @@
             <li class="nav-item {{ Request::is('products') ? 'active' : '' }}">
                 <a class="nav-link text-white {{ Request::is('products') ? 'bg-gradient-primary' : '' }}" href="{{ url('products') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">person</i>
+                        <i class="material-icons">shopping_bag</i>
                     </div>
                     <span class="nav-link-text ms-1">Products</span>
                 </a>
@@ -65,7 +65,43 @@
                         <i class="material-icons opacity-10">person</i>
                     </div>
                     <span class="nav-link-text ms-1">Users</span>
-            </a>
+                </a>
+            </li>
+
+            <li class="nav-item {{ Request::is('add-color') ? 'active' : '' }}">
+                <a class="nav-link text-white {{ Request::is('add-color') ? 'bg-gradient-primary' : '' }}" href="{{ url('add-color') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">person</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Add Color</span>
+                </a>
+            </li>
+
+            <li class="nav-item {{ Request::is('show-list') ? 'active' : '' }}">
+                <a class="nav-link text-white {{ Request::is('show-list') ? 'bg-gradient-primary' : '' }}" href="{{ url('show-list') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">person</i>
+                    </div>
+                    <span class="nav-link-text ms-1">List</span>
+                </a>
+            </li>
+
+            <li class="nav-item {{ Request::is('product-size') ? 'active' : '' }}">
+                <a class="nav-link text-white {{ Request::is('product-size') ? 'bg-gradient-primary' : '' }}" href="{{ url('product-size') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">person</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Add size</span>
+                </a>
+            </li>
+
+            <li class="nav-item {{ Request::is('show-size-list') ? 'active' : '' }}">
+                <a class="nav-link text-white {{ Request::is('show-size-list') ? 'bg-gradient-primary' : '' }}" href="{{ url('show-size-list') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">person</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Size List</span>
+                </a>
             </li>
 
         </ul>

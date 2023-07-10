@@ -4,12 +4,18 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Color;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
+
     public function index(){
+
         $category = Category::all();
       return view('admin.category.start',compact('category'));
 //        return "hello";
@@ -19,6 +25,7 @@ class CategoryController extends Controller
         return view('admin.category.add');
     }
     public function insert(Request $request){
+
        $category = new Category();
        if ($request->hasFile('image'))
        {
@@ -82,4 +89,18 @@ class CategoryController extends Controller
         $category->delete();
         return redirect('categories')->with('status',"Category deleted Successfully");
     }
+
+    public function dashboard()
+    {
+        $categoryCount = Category::count();
+        $productCount = Product::count();
+        $userCount = User::count();
+        $orderCount = Order::count();
+        $pendingOrderCount = Order::where('status', 'pending')->count();
+        $completeOrderCount = Order::where('status', 'complete')->count();
+
+        return view('admin.index', compact('categoryCount', 'productCount', 'userCount','orderCount','pendingOrderCount','completeOrderCount'));
+    }
+
+
 }

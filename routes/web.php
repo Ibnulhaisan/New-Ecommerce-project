@@ -63,10 +63,25 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('edit-category/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'edit']);
     Route::put('update-category/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'update']);
     Route::get('delete-category/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy']);
+    Route::get('dashboard',[\App\Http\Controllers\Admin\CategoryController::class,'dashboard'])->name('dashboard');
+    Route::get('add-color',[\App\Http\Controllers\Admin\ColorController::class,'color']);
+    Route::post('insert-color',[\App\Http\Controllers\Admin\ColorController::class,'insertColor']);
+    Route::get('show-list',[\App\Http\Controllers\Admin\ColorController::class,'showList']);
+    Route::get('edit-color/{id}',[\App\Http\Controllers\Admin\ColorController::class,'editColor']);
+    Route::put('update-color/{id}',[\App\Http\Controllers\Admin\ColorController::class,'updateColor']);
+    Route::get('delete-color/{id}',[\App\Http\Controllers\Admin\ColorController::class,'deleteColor']);
+    Route::get('product-size',[\App\Http\Controllers\Admin\SizeController::class,'size']);
+    Route::post('insert-size',[\App\Http\Controllers\Admin\SizeController::class,'insertSize']);
+    Route::get('show-size-list',[\App\Http\Controllers\Admin\SizeController::class,'sizeList']);
+    Route::get('edit-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'editSize']);
+    Route::post('update-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'updateSize']);
+    Route::get('delete-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'deleteSize']);
+
 
     Route::get('products',[\App\Http\Controllers\Admin\ProductController::class,'index']);
     Route::get('add-products',[\App\Http\Controllers\Admin\ProductController::class,'add']);
     Route::post('insert-product',[\App\Http\Controllers\Admin\ProductController::class,'insert']);
+
 
     Route::get('edit-product/{id}',[\App\Http\Controllers\Admin\ProductController::class,'edit']);
     Route::put('update-product/{id}',[\App\Http\Controllers\Admin\ProductController::class,'update']);
@@ -78,4 +93,5 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('order-history',[\App\Http\Controllers\Admin\OrderController::class,'orderHistory']);
     Route::get('users',[\App\Http\Controllers\Admin\DashboardController::class,'users']);
     Route::get('view-user/{id}',[\App\Http\Controllers\Admin\DashboardController::class,'viewUser']);
+
 });

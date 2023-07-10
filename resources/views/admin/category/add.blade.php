@@ -52,3 +52,10 @@
         </div>
     </div>
 @endsection
+@push('script')
+    <script>
+        $('input[name="name"]').on('change',function (){
+            $('input[name="slug"]').val($(this).val());
+        });
+    </script>
+@endpush
