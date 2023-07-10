@@ -3,7 +3,7 @@
 @section('main-content position-relative max-height-vh-100 h-100 border-radius-lg')
     <div class="card">
         <div class="card-body">
-            <h1>Ibnul is being coded here</h1>
+
         </div>
         <div class="d-flex flex-wrap">
         <div class="card-footer position-relative d-flex align-items-center justify-content-center"  style="width: 275px; height: 10px; background-color: #1662c5; margin-right: 50px; margin-left: 30px; margin-bottom: 50px; margin-top: 30px">
