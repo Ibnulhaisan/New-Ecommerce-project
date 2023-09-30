@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function(){
 
 });
 
+
 Route::middleware(['auth','isAdmin'])->group(function(){
     Route::get('dashboard',[\App\Http\Controllers\Admin\FrontendController::class,'index']);
     Route::get('categories',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('category.info');
@@ -74,7 +75,7 @@ Route::middleware(['auth','isAdmin'])->group(function(){
     Route::post('insert-size',[\App\Http\Controllers\Admin\SizeController::class,'insertSize']);
     Route::get('show-size-list',[\App\Http\Controllers\Admin\SizeController::class,'sizeList']);
     Route::get('edit-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'editSize']);
-    Route::post('update-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'updateSize']);
+    Route::put('update-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'updateSize'])->name('updateData');
     Route::get('delete-size/{id}',[\App\Http\Controllers\Admin\SizeController::class,'deleteSize']);
 
 

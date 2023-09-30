@@ -34,12 +34,14 @@ class ColorController extends Controller
 
     public function editColor($id)
     {
+
         $colors = Color::find($id);
         return view('admin.category.editcolor',compact('colors'));
     }
 
     public function updateColor(Request $request,$id)
     {
+
         $colors = Color::find($id);
         $colors->name = $request->input('name');
         $colors->code = $request->input('code');

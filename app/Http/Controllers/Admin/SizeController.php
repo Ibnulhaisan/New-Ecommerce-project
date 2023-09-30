@@ -10,8 +10,8 @@ class SizeController extends Controller
 {
     public function size()
     {
-        $sizes = Size::all();
-        return view('admin.product.addsize')->with('sizes',$sizes);
+        $product_sizes = Size::all();
+        return view('admin.product.addsize')->with('product_sizes',$product_sizes);
     }
 
     public function insertSize(Request $request)
@@ -23,27 +23,29 @@ class SizeController extends Controller
 
     public function sizeList()
     {
-        $product_size = Size::all();
-        return view('admin.product.sizelist')->with('product_size',$product_size);
+        $product_sizes = Size::all();
+        return view('admin.product.sizelist')->with('product_sizes',$product_sizes);
     }
 
     public function editSize($id)
     {
-        $product_size = Size::find($id);
-        return view('admin.category.editsize',compact('product_size'));
+
+        $product_sizes = Size::find($id);
+        return view('admin.category.editsize',compact('product_sizes'));
     }
 
     public function updateSize(Request $request,$id)
     {
-        $product_size = Size::find($id);
-        $product_size->size = $request->input('size');
-        $product_size->update();
+//        dd($request->all());
+        $product_sizes = Size::find($id);
+        $product_sizes->size = $request->input('size');
+        $product_sizes->update();
     }
 
     public function deleteSize($id)
     {
-        $product_size = Size::find($id);
-        $product_size->delete();
+        $product_sizes = Size::find($id);
+        $product_sizes->delete();
         return redirect('show-size-list')->with('status',"Size deleted Successfully");
 
     }

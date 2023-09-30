@@ -97,15 +97,15 @@
                               </tr>
                            </thead>
                            <tbody>
-                                          @php $total=0; @endphp
-                                  @foreach($cartitems as $item)
+                           <?php $total=0; ?>
+                           @foreach($cartitems as $item)
                                       <tr>
-                                          @php $total += $item->products->selling_price *  $item->prod_qty ; @endphp
+                                          <?php $total += $item->products->selling_price *  $item->prod_qty ; ?>
                                           <td> {{ $item->products->name }}</td>
                                           <td> {{ $item->prod_qty }}</td>
                                           <td> {{ $item->products->selling_price }}</td>
                                     </tr>
-                                  @endforeach
+                           @endforeach
                            </tbody>
                        </table>
                        <h6 class="px-2"> Grand total <span class="float-end">Rs {{ $total }}</span> </h6>

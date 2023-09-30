@@ -15,7 +15,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($product_size as $item)
+                @foreach($product_sizes as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->size }}</td>

@@ -23,7 +23,7 @@
         <div class="card shadow cartitems">
             @if( $cartitems->count() > 0 )
             <div class="card-body">
-                @php $total=0 ; @endphp
+                <?php $total=0 ; ?>
                 @foreach( $cartitems as $item)
                 <div class="row product_data">
                     <div class="col-md-2">
@@ -44,7 +44,7 @@
                                 <input type="text" name="quantity"  class="form-control qty-input text-center" value="{{ $item->prod_qty }}">
                                 <button class="input-group-text changeQuantity increment-btn">+</button>
                             </div>
-                            @php $total += $item->products->selling_price *  $item->prod_qty ; @endphp
+                            <?php $total += $item->products->selling_price *  $item->prod_qty ; ?>
                         @else
                             <h6>Out of Stock</h6>
                         @endif
